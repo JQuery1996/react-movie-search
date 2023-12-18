@@ -1,18 +1,12 @@
-import { forwardRef, type ReactNode, type Ref } from "react";
+import { forwardRef, type Ref } from "react";
 import { Helmet } from "react-helmet-async";
 
 // @mui
 import { Box, type BoxProps } from "@mui/material";
-
-type TPage = {
-  children: ReactNode;
-  title?: string;
-  meta?: ReactNode;
-  other?: BoxProps;
-};
+import { IPage } from "types";
 
 export const Page = forwardRef(
-  ({ title = "", meta, children, ...other }: TPage, ref: Ref<BoxProps>) => {
+  ({ title = "", meta, children, ...other }: IPage, ref: Ref<BoxProps>) => {
     return (
       <>
         <Helmet>

@@ -1,5 +1,5 @@
 import { Container, Typography } from "@mui/material";
-import { Page } from "../components";
+import { Page } from "components";
 
 export default function Movies() {
   return (
