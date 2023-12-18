@@ -1,9 +1,10 @@
+import { LoadingScreen } from "components/LoadingScreen";
 import { Suspense, lazy } from "react";
 import { Navigate, useRoutes } from "react-router-dom";
 
 const Loadable = (Component: any) => (props: any) => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<LoadingScreen />}>
       <Component {...props} />
     </Suspense>
   );
