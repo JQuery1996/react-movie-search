@@ -1,7 +1,6 @@
-import { MotionLazyContainer } from "components/animate";
+import { MotionLazyContainer, ProgressBarStyle } from "components";
 import "./App.css";
 import { Router } from "routes";
-import { ProgressBarStyle } from "components/progressBar";
 
 function App() {
   return (

@@ -20,6 +20,14 @@ export function Router() {
         { path: "movies/:id", element: <MovieDetails /> },
       ],
     },
+    {
+      path: "*",
+      children: [
+        { path: "404", element: <NotFound /> },
+        { path: "*", element: <Navigate to="/404" replace /> },
+      ],
+    },
+    { path: "*", element: <Navigate to="/404" replace /> },
   ]);
 }
 
@@ -28,3 +36,6 @@ const Movies = Loadable(lazy(() => import("../pages/Movies")));
 
 // import MovieDetail Page
 const MovieDetails = Loadable(lazy(() => import("../pages/MovieDetails")));
+
+// import Not Found Page
+const NotFound = Loadable(lazy(() => import("../pages/notFound")));
