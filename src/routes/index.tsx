@@ -1,4 +1,5 @@
 import { LoadingScreen } from "components/LoadingScreen";
+import { MainLayout } from "layout";
 import { Suspense, lazy } from "react";
 import { Navigate, useRoutes } from "react-router-dom";
 
@@ -14,6 +15,7 @@ export function Router() {
   return useRoutes([
     {
       path: "/",
+      element: <MainLayout />,
       children: [
         { element: <Navigate to="/movies" replace />, index: true },
         { path: "movies", element: <Movies /> },

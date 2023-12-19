@@ -3,7 +3,7 @@ import { Link as RouterLink, useNavigate } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
 import { Box, type BoxProps } from "@mui/material";
 
-export default function Logo({
+export function Logo({
   disabledLink = false,
   sx,
 }: {

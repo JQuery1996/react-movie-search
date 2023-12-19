@@ -39,7 +39,7 @@ export function ProgressBarStyle() {
   );
 }
 
-export default function ProgressBar() {
+export function ProgressBar() {
   NProgress.configure({
     showSpinner: false,
   });

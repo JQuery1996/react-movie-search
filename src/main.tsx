@@ -5,16 +5,22 @@ import "./index.css";
 
 // react-router
 import { BrowserRouter } from "react-router-dom";
+
 // manage document head
 // this package is fork from react-helmet
 import { HelmetProvider } from "react-helmet-async";
 
+// setting context
+import { SettingsProvider } from "contexts";
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <HelmetProvider>
-    <BrowserRouter>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </BrowserRouter>
+    <SettingsProvider>
+      <BrowserRouter>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </BrowserRouter>
+    </SettingsProvider>
   </HelmetProvider>
 );

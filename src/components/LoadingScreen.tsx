@@ -5,8 +5,8 @@ import { alpha, styled } from "@mui/material/styles";
 import { Box } from "@mui/material";
 
 //
-import Logo from "./Logo";
-import ProgressBar from "./progressBar";
+import { Logo } from "./Logo";
+import { ProgressBar } from "./progressBar";
 
 const RootStyle = styled("div")(({ theme }) => ({
   left: 0,
