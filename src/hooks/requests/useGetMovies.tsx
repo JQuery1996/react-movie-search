@@ -1,4 +1,4 @@
-import { MOVIES_API } from "api";
+import { MOVIES_API, MOVIES_SEARCH_API } from "api";
 import { useEffect, useState } from "react";
 import { IMOVIE } from "types";
 import { api } from "utils";
@@ -22,7 +22,9 @@ export function useGetMovies({
   async function getMovies() {
     try {
       setIsLoading(true);
-      const response = await api.get(MOVIES_API(page, query));
+      const response = await api.get(
+        query ? MOVIES_SEARCH_API(page, query) : MOVIES_API(page)
+      );
       setData(response.data);
     } catch (error) {
       setError(error);

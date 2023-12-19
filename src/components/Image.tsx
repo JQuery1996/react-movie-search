@@ -89,7 +89,7 @@ export function Image({
         component={LazyLoadImage}
         wrapperClassName="wrapper"
         effect={disabledEffect ? undefined : effect}
-        placeholderSrc="/assets/placeholder.svg"
+        placeholderSrc="/placeholder.svg"
         sx={{ width: 1, height: 1, objectFit: "cover" }}
         {...other}
       />

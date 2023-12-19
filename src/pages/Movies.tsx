@@ -5,9 +5,10 @@ import {
   Page,
   StatusHandler,
   varSlide,
+  EmptyContent,
 } from "components";
 import { useGetMovies } from "hooks";
-import { MoviesList } from "sections";
+import { MovieSearch, MoviesList } from "sections";
 import { m } from "framer-motion";
 import { useState } from "react";
 export default function Movies() {
@@ -23,13 +24,22 @@ export default function Movies() {
         <MotionContainer>
           <StatusHandler isLoading={isLoading} error={error}>
             <Container>
+              <MovieSearch query={query} setQuery={setQuery} />
               <m.div variants={varSlide().inLeft}>
-                <MoviesList
-                  movies={data.results}
-                  totalPages={data.total_pages}
-                  page={page}
-                  setPage={setPage}
-                />
+                {data.results && data.results.length ? (
+                  <MoviesList
+                    movies={data.results}
+                    totalPages={data.total_pages}
+                    page={page}
+                    setPage={setPage}
+                  />
+                ) : (
+                  <EmptyContent
+                    title="NO DATA"
+                    description="THERE IS NO MOVIES MATCH YOUR QUERY PLEASE TRY AGAIN WITH ANOTHER NAME"
+                    sx={{ mt: 8 }}
+                  />
+                )}
               </m.div>
             </Container>
           </StatusHandler>
