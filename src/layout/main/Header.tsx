@@ -5,7 +5,7 @@ import { useResponsive } from "hooks";
 export function Header() {
   const isSmall = useResponsive("down", "md");
   return (
-    <AppBar position="static" variant="elevation" color="default">
+    <AppBar position="static" variant="outlined" color="default" elevation={0}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Logo />

@@ -6,3 +6,7 @@ export * from "./animate";
 export * from "./progressBar";
 export * from "./Label";
 export * from "./ToggleTheme";
+export * from "./ContentStyle";
+export * from "./status";
+export * from "./movies";
+export * from "./TextMaxLine";
