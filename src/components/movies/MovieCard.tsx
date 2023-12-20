@@ -60,7 +60,7 @@ export function MovieCard({ movie }: { movie: IMOVIE }) {
       </CardActions>
       <Tooltip title="Average rating" arrow placement="top">
         <Chip
-          label={movie.vote_average}
+          label={movie.vote_average.toFixed(2)}
           sx={{
             position: "absolute",
             top: 4,

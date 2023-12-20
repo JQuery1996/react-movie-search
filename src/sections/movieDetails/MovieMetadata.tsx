@@ -50,13 +50,14 @@ export function MovieMetadata({ movie }: { movie: IMOVIE }) {
           <Typography variant="body1" sx={{ color: "text.secondary" }}>
             {movie.overview}
           </Typography>
-
-          <Typography
-            variant="body1"
-            sx={{ color: "warning.dark", fontSize: "bold" }}
-          >
-            ({movie.tagline})
-          </Typography>
+          {movie.tagline && (
+            <Typography
+              variant="body1"
+              sx={{ color: "warning.dark", fontSize: "bold" }}
+            >
+              ({movie.tagline})
+            </Typography>
+          )}
         </Stack>
       </Stack>
       <MovieListDetails movie={movie} />
