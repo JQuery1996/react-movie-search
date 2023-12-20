@@ -1,18 +1,13 @@
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  Stack,
-  Tooltip,
-  Typography,
-} from "@mui/material";
+import { Button, Card, CardActions, CardContent, Tooltip } from "@mui/material";
 import { Iconify, Image } from "components";
 import TextMaxLine from "components/TextMaxLine";
+import { useNavigate } from "react-router-dom";
+import { PATHS } from "routes";
 import { IMOVIE } from "types";
 import { generateImageURL } from "utils";
 
 export function MovieCard({ movie }: { movie: IMOVIE }) {
+  const navigate = useNavigate();
   return (
     <Card
       sx={{
@@ -33,7 +28,7 @@ export function MovieCard({ movie }: { movie: IMOVIE }) {
         <TextMaxLine variant="h6" line={2} persistent sx={{ fontWeight: 900 }}>
           {movie.title}
         </TextMaxLine>
-        <Tooltip title={movie.overview} arrow sx={{ mt: 1 }}>
+        <Tooltip title={movie.overview} arrow sx={{ mt: 1 }} placement="top">
           <TextMaxLine
             variant="body2"
             line={3}
@@ -45,8 +40,15 @@ export function MovieCard({ movie }: { movie: IMOVIE }) {
         </Tooltip>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Button
+          size="small"
+          fullWidth
+          variant="contained"
+          startIcon={<Iconify className="icon" icon="tabler:arrow-right" />}
+          onClick={() => navigate(PATHS.MOVIE_DETAILS(movie.id))}
+        >
+          View Details
+        </Button>
       </CardActions>
     </Card>
   );

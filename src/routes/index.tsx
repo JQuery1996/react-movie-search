@@ -41,3 +41,6 @@ const MovieDetails = Loadable(lazy(() => import("../pages/MovieDetails")));
 
 // import Not Found Page
 const NotFound = Loadable(lazy(() => import("../pages/notFound")));
+
+// export everything from the paths
+export * from "./paths";
