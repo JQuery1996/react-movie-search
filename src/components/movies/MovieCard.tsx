@@ -1,4 +1,11 @@
-import { Button, Card, CardActions, CardContent, Tooltip } from "@mui/material";
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Chip,
+  Tooltip,
+} from "@mui/material";
 import { Iconify, Image } from "components";
 import TextMaxLine from "components/TextMaxLine";
 import { useNavigate } from "react-router-dom";
@@ -17,6 +24,7 @@ export function MovieCard({ movie }: { movie: IMOVIE }) {
           transform: "scale(1.05)",
           boxShadow: 3,
         },
+        position: "relative",
       }}
     >
       <Image
@@ -50,6 +58,18 @@ export function MovieCard({ movie }: { movie: IMOVIE }) {
           View Details
         </Button>
       </CardActions>
+      <Tooltip title="Average rating" arrow placement="top">
+        <Chip
+          label={movie.vote_average}
+          sx={{
+            position: "absolute",
+            top: 4,
+            right: 4,
+            fontWeight: "bold",
+          }}
+          color="error"
+        />
+      </Tooltip>
     </Card>
   );
 }

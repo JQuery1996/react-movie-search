@@ -1,5 +1,5 @@
 import { Container, Grid } from "@mui/material";
-import { MotionContainer, Page, StatusHandler, varSlide } from "components";
+import { MotionContainer, Page, StatusHandler } from "components";
 import { useGetMovieDetails } from "hooks";
 import { useParams } from "react-router-dom";
 import { MovieImage, MovieMetadata, SimilarMovies } from "sections";

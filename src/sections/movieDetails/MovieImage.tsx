@@ -13,7 +13,7 @@ export function MovieImage({ movie }: { movie: IMOVIE }) {
         src={generateImageURL(movie.poster_path)}
         title="green iguana"
       />
-      {movie.adult && (
+      {!movie.adult && (
         <Image
           style={{
             height: 100,
