@@ -1,14 +1,14 @@
-import { discoverMoviesApi, searchMoviesApi } from "api";
+import { similarMoviesApi } from "api";
 import { useEffect, useState } from "react";
 import { IGETMOVIES } from "types";
 import { api } from "utils";
 
-export function useGetMovies({
+export function useGetSimilarMovies({
+  id,
   page = 1,
-  query = "",
 }: {
+  id: number;
   page: number;
-  query: string;
 }) {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState<IGETMOVIES>({} as IGETMOVIES);
@@ -16,9 +16,7 @@ export function useGetMovies({
   async function getMovies() {
     try {
       setIsLoading(true);
-      const response = await api.get(
-        query ? searchMoviesApi(page, query) : discoverMoviesApi(page)
-      );
+      const response = await api.get(similarMoviesApi(id, page));
       setData(response.data);
     } catch (error) {
       setError(error);
@@ -29,7 +27,7 @@ export function useGetMovies({
   }
   useEffect(() => {
     getMovies();
-  }, [page, query]);
+  }, [id, page]);
 
   return { isLoading, data, setData, error, setError };
 }

@@ -1,4 +1,4 @@
-import { MOVIE_DETAILS_API } from "api";
+import { movieDetailsApi } from "api";
 import { useEffect, useState } from "react";
 import { IMOVIE } from "types";
 import { api } from "utils";
@@ -10,7 +10,7 @@ export function useGetMovieDetails(id: number) {
   async function getMovieDetails() {
     try {
       setIsLoading(true);
-      const response = await api.get(MOVIE_DETAILS_API(id));
+      const response = await api.get(movieDetailsApi(id));
       setMovie(response.data);
     } catch (error) {
       setError(error);

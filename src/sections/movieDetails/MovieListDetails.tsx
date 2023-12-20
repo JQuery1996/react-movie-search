@@ -54,7 +54,8 @@ export function MovieListDetails({ movie }: { movie: IMOVIE }) {
         <Stack direction="row" spacing={1}>
           <Stack direction="row" spacing={0.2}>
             <Iconify
-              icon="lets-icons:date-today-duotone"
+              // icon="lets-icons:date-today-duotone"
+              icon="icon-park-outline:dot"
               sx={{ width: 25, height: 25, color: "text.secondary" }}
             />
             <Typography sx={{ fontWeight: "bold", color: "text.secondary" }}>
@@ -70,7 +71,8 @@ export function MovieListDetails({ movie }: { movie: IMOVIE }) {
         <Stack direction="row" spacing={1}>
           <Stack direction="row" spacing={0.5}>
             <Iconify
-              icon="fa6-solid:language"
+              // icon="fa6-solid:language"
+              icon="icon-park-outline:dot"
               sx={{ width: 25, height: 25, color: "text.secondary" }}
             />
             <Typography sx={{ fontWeight: "bold", color: "text.secondary" }}>
