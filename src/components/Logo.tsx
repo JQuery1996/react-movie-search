@@ -1,4 +1,4 @@
-import { Link as RouterLink, useNavigate } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 // @mui
 import { useTheme } from "@mui/material/styles";
 import { Box, type BoxProps } from "@mui/material";

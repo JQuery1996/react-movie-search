@@ -1,17 +1,7 @@
-import { Link as RouterLink } from "react-router-dom";
 // @mui
 import { styled } from "@mui/material/styles";
 import { CSS_STYLES } from "utils";
-import {
-  Grid,
-  Link,
-  Divider,
-  Container,
-  Typography,
-  Stack,
-  Button,
-  Box,
-} from "@mui/material";
+import { Divider, Container, Typography, Box } from "@mui/material";
 // components
 import { Logo } from "components";
 
