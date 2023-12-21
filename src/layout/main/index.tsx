@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import { Box, Stack } from "@mui/material";
 // components
 import { Header } from "./Header";
+import { Footer } from "./Footer";
 
 // ----------------------------------------------------------------------
 
@@ -15,7 +16,7 @@ export function MainLayout() {
 
       <Box sx={{ flexGrow: 1 }} />
 
-      {/* <MainFooter /> */}
+      <Footer />
     </Stack>
   );
 }

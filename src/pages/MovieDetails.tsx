@@ -1,15 +1,8 @@
 import { Container, Grid } from "@mui/material";
-import {
-  MotionContainer,
-  Page,
-  StatusHandler,
-  varFade,
-  varSlide,
-  varZoom,
-} from "components";
+import { MotionContainer, Page, StatusHandler, varZoom } from "components";
 import { useGetMovieDetails } from "hooks";
 import { useParams } from "react-router-dom";
-import { MovieImage, MovieMetadata, SimilarMovies } from "sections";
+import { MoviePoster, MovieMetadata, SimilarMovies } from "sections";
 import { easeInOut, m } from "framer-motion";
 export default function MovieDetails() {
   const { id } = useParams();
@@ -29,7 +22,7 @@ export default function MovieDetails() {
             <Grid container spacing={4}>
               <Grid item xs={12}>
                 <m.div variants={varZoom({ easeInOut }).in}>
-                  <MovieImage movie={movie} />
+                  <MoviePoster movie={movie} />
                 </m.div>
               </Grid>
               <Grid item xs={12}>
