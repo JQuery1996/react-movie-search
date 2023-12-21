@@ -8,6 +8,9 @@ import {
 } from "@mui/material";
 import { Iconify, Image } from "components";
 import TextMaxLine from "components/TextMaxLine";
+import { FAVORITE_MOVIES_LOCAL_STORAGE_KEY } from "consts";
+import { useLocalStorage } from "hooks";
+import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { PATHS } from "routes";
 import { IMOVIE } from "types";
@@ -15,6 +18,14 @@ import { generateImageURL } from "utils";
 
 export function MovieCard({ movie }: { movie: IMOVIE }) {
   const navigate = useNavigate();
+  const [favoriteMovies] = useLocalStorage(
+    FAVORITE_MOVIES_LOCAL_STORAGE_KEY,
+    []
+  ) as [IMOVIE[]];
+  const inFavorite = useMemo(
+    () => favoriteMovies.some((m) => m.id == movie.id),
+    [favoriteMovies]
+  );
   return (
     <Card
       sx={{
@@ -70,6 +81,20 @@ export function MovieCard({ movie }: { movie: IMOVIE }) {
           color="error"
         />
       </Tooltip>
+
+      {inFavorite && (
+        <Iconify
+          icon="solar:star-bold"
+          sx={{
+            width: 25,
+            height: 25,
+            color: "yellow",
+            position: "absolute",
+            top: 4,
+            left: 4,
+          }}
+        />
+      )}
     </Card>
   );
 }

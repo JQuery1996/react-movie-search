@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { ImdbIllustration } from "assets";
 import { ClippedTypography, Iconify } from "components";
-import { IGETMOVIES, IMOVIE } from "types";
+import { IMOVIE } from "types";
 import { generateImageURL } from "utils";
 import { CSS_STYLES } from "utils";
 import { MovieGenres } from "./MovieGenres";

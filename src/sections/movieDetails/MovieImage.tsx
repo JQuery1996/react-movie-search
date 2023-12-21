@@ -2,7 +2,6 @@ import { Box } from "@mui/material";
 import { Image } from "components";
 import { IMOVIE } from "types";
 import { generateImageURL } from "utils";
-
 export function MovieImage({ movie }: { movie: IMOVIE }) {
   return (
     <Box sx={{ width: "100%", position: "relative" }}>
