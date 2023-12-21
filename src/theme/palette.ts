@@ -116,7 +116,7 @@ const palette = {
     ...COMMON,
     mode: "light",
     text: { primary: "#23282E", secondary: "#707070", disabled: GREY[500] },
-    background: { paper: LIGHT_MODE, default: LIGHT_MODE, neutral: "#23282E" },
+    background: { paper: LIGHT_MODE, default: LIGHT_MODE, neutral: LIGHT_MODE },
     action: { active: GREY[600], ...COMMON.action },
   },
   dark: {

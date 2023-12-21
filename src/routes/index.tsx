@@ -19,6 +19,7 @@ export function Router() {
       children: [
         { element: <Navigate to="/movies" replace />, index: true },
         { path: "movies", element: <Movies /> },
+        { path: "movies/favorite", element: <FavoriteMovies /> },
         { path: "movies/:id", element: <MovieDetails /> },
       ],
     },
@@ -38,6 +39,9 @@ const Movies = Loadable(lazy(() => import("../pages/Movies")));
 
 // import MovieDetail Page
 const MovieDetails = Loadable(lazy(() => import("../pages/MovieDetails")));
+
+// import MovieDetail Page
+const FavoriteMovies = Loadable(lazy(() => import("../pages/FavoriteMovies")));
 
 // import Not Found Page
 const NotFound = Loadable(lazy(() => import("../pages/notFound")));
