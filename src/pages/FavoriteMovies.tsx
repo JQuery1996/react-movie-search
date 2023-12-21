@@ -1,5 +1,6 @@
 import { Container, Grid } from "@mui/material";
 import {
+  EmptyContent,
   MotionContainer,
   MovieCard,
   Page,
@@ -25,13 +26,20 @@ export default function FavoriteMovies() {
         />
         <m.div variants={varSlide().inLeft}>
           <Container sx={{ my: 4 }}>
-            <Grid container spacing={3}>
-              {favoriteMovies.map((movie) => (
-                <Grid key={movie.id} item xs={12} sm={6} md={4} lg={3}>
-                  <MovieCard movie={movie} />
-                </Grid>
-              ))}
-            </Grid>
+            {favoriteMovies && favoriteMovies.length ? (
+              <Grid container spacing={3}>
+                {favoriteMovies.map((movie) => (
+                  <Grid key={movie.id} item xs={12} sm={6} md={4} lg={3}>
+                    <MovieCard movie={movie} />
+                  </Grid>
+                ))}
+              </Grid>
+            ) : (
+              <EmptyContent
+                title="NO DATA"
+                description="THERE IS NO MOVIES IN YOUR FAVORITE LIST"
+              />
+            )}
           </Container>
         </m.div>
       </MotionContainer>
