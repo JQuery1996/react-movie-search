@@ -15,7 +15,7 @@ export function PageDescription({
       direction="column"
       spacing={1}
       sx={{
-        px: { lg: 6.5, lx: 6.5, md: 2, sm: 2, xs: 2 },
+        px: { lg: 6.5, lx: 6.5, md: 2, sm: 0.5, xs: 0.5 },
         py: 2.5,
         bgcolor:
           color ?? ((theme) => (theme as any).palette.background.neutral),
@@ -23,7 +23,7 @@ export function PageDescription({
       }}
     >
       <Typography variant="h3">{title}</Typography>
-      <Typography variant="body2" sx={{ px: 10, color: "text.secondary" }}>
+      <Typography variant="body2" sx={{ px: 2, color: "text.secondary" }}>
         {description}
       </Typography>
     </Stack>
