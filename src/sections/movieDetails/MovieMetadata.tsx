@@ -18,12 +18,14 @@ import { MovieCompanies } from "./MovieCompanies";
 import { useLocalStorage } from "hooks";
 import { FAVORITE_MOVIES_LOCAL_STORAGE_KEY } from "consts";
 import { useMemo } from "react";
+import { enqueueSnackbar, useSnackbar } from "notistack";
 
 export function MovieMetadata({ movie }: { movie: IMOVIE }) {
   const [favoriteMovies, setFavoriteMovies] = useLocalStorage(
     FAVORITE_MOVIES_LOCAL_STORAGE_KEY,
     []
   ) as [IMOVIE[], (movie: IMOVIE[]) => void];
+  const { enqueueSnackbar } = useSnackbar();
   function handleGoHome() {
     window.open(movie.homepage, "_blank");
   }
@@ -31,6 +33,15 @@ export function MovieMetadata({ movie }: { movie: IMOVIE }) {
     inFavorite
       ? setFavoriteMovies(favoriteMovies.filter((m) => m.id !== movie.id))
       : setFavoriteMovies([...favoriteMovies, movie]);
+
+    enqueueSnackbar(
+      inFavorite
+        ? "Movie removed from your favorite list"
+        : "Movie added to your favorite list",
+      {
+        variant: inFavorite ? "error" : "success",
+      }
+    );
   }
 
   const inFavorite = useMemo(
