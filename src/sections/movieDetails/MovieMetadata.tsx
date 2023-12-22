@@ -18,7 +18,7 @@ import { MovieCompanies } from "./MovieCompanies";
 import { useLocalStorage } from "hooks";
 import { FAVORITE_MOVIES_LOCAL_STORAGE_KEY } from "consts";
 import { useMemo } from "react";
-import { enqueueSnackbar, useSnackbar } from "notistack";
+import { useSnackbar } from "notistack";
 
 export function MovieMetadata({ movie }: { movie: IMOVIE }) {
   const [favoriteMovies, setFavoriteMovies] = useLocalStorage(
